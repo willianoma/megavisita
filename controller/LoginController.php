@@ -38,7 +38,7 @@ class LoginController {
 
         $user = $this->usuarioDao->getUsuarioLogin($email);
 
-        echo 'Autenticando...';
+        echo 'Autenticando... ';
 
 
         if ($user->getEmail() == $email && $user->getSenha() == $senha) {
@@ -49,7 +49,9 @@ class LoginController {
             header('location:index.php');
 //            echo '<meta http-equiv="refresh" content="0; url=http://mempreendimentos.com.br/megavisitawebok">';
         } else
-            echo 'usuario ou senha incorreto';
+            echo 'usuario ou senha incorreto, Aguarde...';
+        
+      echo '<meta http-equiv="refresh" content="2; url=http://mempreendimentos.com.br/megavisita">';
     }
 
     function logonAdmin() {

@@ -68,11 +68,14 @@ class UsuarioDao {
             $usuario = new Usuario($item['id'], $item['nome'], $item['senha'], $item['cpf'], $item['email'], $item['funcao'], $item['permicao']);
         }
 
-        if ($usuario!=NULL) {
+        if ($usuario != NULL) {
 
             return $usuario;
-        } else
-            echo 'Usuario inesistente (DAO)';
+        } else {
+            echo 'Usuario inesistente, Aguarde...';
+            echo '<meta http-equiv="refresh" content="2; url=http://mempreendimentos.com.br/megavisita">';
+            die();
+        }
     }
 
 }

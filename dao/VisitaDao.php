@@ -41,12 +41,10 @@ class VisitaDao {
         echo 'Usuário editado com sucesso!';
     }
 
-    function deletar($visita) {
+    function deletar($id) {
 
-        $sql = "delete from $this->tabela_bd where id =" . $visita->getId();
-        mysql_query($sql) or die($sql)
-
-        ;
+        $sql = "delete from $this->tabela_bd where id =" . $id;
+        mysql_query($sql) or die($sql);
         echo 'Visita deletado com sucesso!';
     }
 

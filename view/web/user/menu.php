@@ -14,7 +14,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="?controller=Usuario&acao=listar">Usuários <span class="caret"></span> </a>
         </li>-->
         <li><a href="?controller=Visita&acao=formCadastrarVisita">Cadastrar Visita</a></li>
-        <li><a href="?controller=Visita&acao=listar">Listar Visita</a></li>
+        <li><a href="?controller=Visita&acao=listarUser">Listar Visita</a></li>
         <!--<li><a href="?controller=BD&acao=configForm">Configurar Banco</a></li>-->
         <li><a href="index.php?controller=Login&acao=logout">Logout</a> </li>
 

@@ -1,37 +1,37 @@
 <!--<head>-->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>   
-    <style type="text/css">
-        /*        #linhaDetalhe{
-                    border: 1px solid;
-                    padding: 10px;
-                    width: 1200px;
-               
-        
-                }       
-                 
-                  
-        */                
-        td{
-            height: 50px;
-        }
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="script.js"></script>   
+<style type="text/css">
+    /*        #linhaDetalhe{
+                border: 1px solid;
+                padding: 10px;
+                width: 1200px;
+           
+    
+            }       
+             
+              
+    */                
+    td{
+        height: 50px;
+    }
 
-        #tabela{
-            border: 1px solid;
-            padding: 10px;
+    #tabela{
+        border: 1px solid;
+        padding: 10px;
 
-            width: 1200px;
-            min-width: 1200px;
-            max-width: 1400px;
-            border-collapse: collapse;
-            text-align: center;
-
-
-        }
+        width: 1200px;
+        min-width: 1200px;
+        max-width: 1400px;
+        border-collapse: collapse;
+        text-align: center;
 
 
+    }
 
-    </style>
+
+
+</style>
 
 <!--</head>-->
 
@@ -126,7 +126,8 @@
     <th><input type="text" id="txtColuna8" style="width: 120px;" ></th>
     <th><input type="text" id="txtColuna9" style="width: 130px;" /></th>
     <th><input type="text" id="txtColuna10" style="width: 130px;" /></th>
-    <th><input type="text" id="txtColuna11" readonly="" style="width: 110px;" /></th>
+    <th><input type="text" id="txtColuna11" readonly=""  style="width: 110px;" /></th>
+    <th><input type="text" id="txtColuna12" readonly=""  style="width: 110px;" /></th>
 
     <?php
     $listaVisitas = $_REQUEST['listaVisita'];
@@ -166,6 +167,14 @@
 		<input type='hidden' value='$empresa' name='empresa'>
 		<input type='hidden' value='$usuario' name='usuario'>
 		<input type='submit' value='Ver no mapa'>	
+		</form>
+	    </td>
+            
+            <td>
+		<form action='?controller=Visita&acao=deletarVisita' method='post'>
+		<input type='hidden' value='$id' name='id'>
+		
+		<input type='submit' value='Excluir Visita'>	
 		</form>
 	    </td>
 				

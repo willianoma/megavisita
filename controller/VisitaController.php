@@ -18,11 +18,19 @@ class VisitaController {
         include 'view/web/visita/ListarVisitas.php';
     }
 
-    function listarMobile() {
+    function listarUser() {
         $_REQUEST['listaVisita'] = $this->visitaDao->listar();
         $_REQUEST['listaEmpresa'] = $this->empresaDao->listar();
-        include 'view/mobile/visita/ListarVisitas.php';
+        include 'view/web/visita/ListarVisitasUser.php';
     }
+
+    function listarAdmin() {
+        $_REQUEST['listaVisita'] = $this->visitaDao->listar();
+        $_REQUEST['listaEmpresa'] = $this->empresaDao->listar();
+        include 'view/web/visita/ListarVisitasAdmin.php';
+    }
+
+ 
 
     function getUsuarioLogado() {
         $_REQUEST['usuarioLogado'];
@@ -114,14 +122,20 @@ class VisitaController {
             $localization = $_POST['var_escondida'];
 
 
-
-        date_default_timezone_set('UTC');
+        date_default_timezone_set('America/Sao_Paulo');
         $horaLocal = date('d-m-Y H:i:s');
 
         $id = "";
 
         $visita = new Visita($id, $empresa, $usuario, $descricao, $pendencias, $corretiva, $horaDeInicioFormatada, $horaDeTerminoForamatada, $localization, $horaLocal);
         $this->visitaDao->cadastrar($visita);
+    }
+
+    function deletarVisita() {
+
+        $id = $_POST['id'];
+//        $visita = new Visita($id, "", "", "", "", "", "", "", "", "");
+        $this->visitaDao->deletar($id);
     }
 
     function verNoMapa() {

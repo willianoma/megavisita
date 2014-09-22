@@ -14,7 +14,7 @@
         </li>
         <!--<li><a href="?controller=Usuario&acao=listar">Usuários</a></li>-->
         <li><a href="?controller=Visita&acao=formCadastrarVisita">Cadastrar Visita</a></li>
-        <li><a href="?controller=Visita&acao=listar">Listar Visita</a></li>
+        <li><a href="?controller=Visita&acao=listarAdmin">Listar Visita</a></li>
         <li><a href="?controller=BD&acao=configForm">Configurar Banco</a></li>
         <li><a href="index.php?controller=Login&acao=logout">Logout</a> </li>
 

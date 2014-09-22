@@ -9,7 +9,7 @@
     </head>
     <body>
     </body>
-</html>
+
 
 <ul class="nav nav-pills">
     <li class="dropdown nav-pills active">
@@ -27,7 +27,7 @@
         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Visitas <span class="caret"></span></a>
         <ul class="dropdown-menu">
             <li class="active"><a href="?controller=Visita&acao=formCadastrarVisitaMobile">Cadastrar Visita</a></li>
-            <li class="active"><a href="?controller=Visita&acao=listarMobile">Listar Visita</a></li>
+            <li class="active"><a href="?controller=Visita&acao=listarAdmin">Listar Visita</a></li>
         </ul>
 </ul>
 
