@@ -30,8 +30,6 @@ class VisitaController {
         include 'view/web/visita/ListarVisitasAdmin.php';
     }
 
- 
-
     function getUsuarioLogado() {
         $_REQUEST['usuarioLogado'];
         $usuarioSessao = $_SESSION['user'];
@@ -129,6 +127,8 @@ class VisitaController {
 
         $visita = new Visita($id, $empresa, $usuario, $descricao, $pendencias, $corretiva, $horaDeInicioFormatada, $horaDeTerminoForamatada, $localization, $horaLocal);
         $this->visitaDao->cadastrar($visita);
+        echo '<meta http-equiv="refresh" content="2; url=http://mempreendimentos.com.br/megavisita">';
+//        header('location:index.php');
     }
 
     function deletarVisita() {
@@ -136,6 +136,7 @@ class VisitaController {
         $id = $_POST['id'];
 //        $visita = new Visita($id, "", "", "", "", "", "", "", "", "");
         $this->visitaDao->deletar($id);
+         echo '<meta http-equiv="refresh" content="0; url=http://mempreendimentos.com.br/megavisita/?controller=Visita&acao=listarAdmin">';
     }
 
     function verNoMapa() {

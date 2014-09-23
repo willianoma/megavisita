@@ -22,7 +22,7 @@ class VisitaDao {
     function cadastrar($visita) {
         $sql = mysql_query("INSERT INTO $this->tabela_bd(empresa,usuario,descricao,pendencias,corretiva,horaDeInicio,horaDeTermino,localization,horaLocal) VALUES('" . $visita->getEmpresa() . "','" . $visita->getUsuario() . "','" . $visita->getDescricao() . "','" . $visita->getPendencias() . "','" . $visita->getCorretiva() . "','" . $visita->getHoraDeInicio() . "','" . $visita->getHoraDeTermino() . "','" . $visita->getLocalization() . "','" . $visita->getHoraLocal() . "')");
         if ($sql) {
-            echo "Cadastrado com sucesso!!";
+            echo "Cadastrado com sucesso!! Aguarde!";
         } else {
             echo "Falha ao cadastrar." .
             mysql_error();
