@@ -120,7 +120,7 @@ class VisitaController {
             $localization = $_POST['var_escondida'];
 
 
-        date_default_timezone_set('America/Sao_Paulo');
+        date_default_timezone_set('America/Maceio');
         $horaLocal = date('d-m-Y H:i:s');
 
         $id = "";
