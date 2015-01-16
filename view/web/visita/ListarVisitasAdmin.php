@@ -42,20 +42,20 @@
 </p>
 
 <script>
-    $(function() {
-        $("#tabela input").keyup(function() {
+    $(function () {
+        $("#tabela input").keyup(function () {
             var index = $(this).parent().index();
             var nth = "#tabela td:nth-child(" + (index + 1).toString() + ")";
             var valor = $(this).val().toUpperCase();
             $("#tabela tbody tr").show();
-            $(nth).each(function() {
+            $(nth).each(function () {
                 if ($(this).text().toUpperCase().indexOf(valor) < 0) {
                     $(this).parent().hide();
                 }
             });
         });
 
-        $("#tabela input").blur(function() {
+        $("#tabela input").blur(function () {
             $(this).val("");
         });
     });
@@ -112,7 +112,7 @@
         <td style="font-weight: bold;">Usuário</td>
         <td style="font-weight: bold;">Localização</td>
         <td style="font-weight: bold;">Hora do Cadastro</td>
-        <td style="font-weight: bold;" colspan="2">Ações</td>
+        <td style="font-weight: bold;" colspan="3">Ações</td>
     </tr>
 
 
@@ -127,11 +127,12 @@
     <th><input type="text" id="txtColuna9" style="width: 130px;" /></th>
     <th><input type="text" id="txtColuna10" style="width: 130px;" /></th>
     <th><input type="text" id="txtColuna11" readonly=""  style="width: 110px;" /></th>
-    <th><input type="text" id="txtColuna12" readonly=""  style="width: 110px;" /></th>
+    <th><input type="text" id="txtColuna12" readonly=""  style="width: 155px;" /></th>
+    <th><input type="text" id="txtColuna13" readonly=""  style="width: 110px;" /></th>
 
     <?php
     $listaVisitas = $_REQUEST['listaVisita'];
-
+ 
     foreach ($listaVisitas as $visita) {
         $id = $visita->getId();
         $empresa = $visita->getEmpresa();
@@ -167,6 +168,14 @@
 		<input type='hidden' value='$empresa' name='empresa'>
 		<input type='hidden' value='$usuario' name='usuario'>
 		<input type='submit' value='Ver no mapa'>	
+		</form>
+	    </td>
+            
+            <td>
+		<form action='?controller=Visita&acao=comprovanteVisita' method='post'>
+		<input type='hidden' value='$id' name='id'>
+		
+		<input type='submit' value='Comprovante Visita'>	
 		</form>
 	    </td>
             

@@ -55,7 +55,7 @@ class VisitaDao {
 //        $objEmpresa = null;
         while ($dados = mysql_fetch_array($result)) {
             $visita = new Visita($dados['id'], $dados['empresa'], $dados['usuario'], $dados['descricao'], $dados['pendencias'], $dados['corretiva'], $dados['horaDeInicio'], $dados['horaDeTermino'], $dados['localization'], $dados['horaLocal']);
-            $visita->setId($item['id']);
+//            $visita->setId($item['id']);
         }
         return $visita;
     }

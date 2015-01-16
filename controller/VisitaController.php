@@ -136,7 +136,17 @@ class VisitaController {
         $id = $_POST['id'];
 //        $visita = new Visita($id, "", "", "", "", "", "", "", "", "");
         $this->visitaDao->deletar($id);
-         echo '<meta http-equiv="refresh" content="0; url=http://mempreendimentos.com.br/megavisita/?controller=Visita&acao=listarAdmin">';
+        echo '<meta http-equiv="refresh" content="0; url=http://mempreendimentos.com.br/megavisita/?controller=Visita&acao=listarAdmin">';
+    }
+
+    function comprovanteVisita() {
+
+        $id = $_POST['id'];
+        $_REQUEST['visita'] = $this->visitaDao->getVisita($id);
+        include_once 'view/web/visita/ComprovanteVisita.php';
+//        $visita = new Visita($id, "", "", "", "", "", "", "", "", "");
+//        $this->visitaDao->deletar($id);
+//        echo '<meta http-equiv="refresh" content="0; url=http://mempreendimentos.com.br/megavisita/?controller=Visita&acao=listarAdmin">';
     }
 
     function verNoMapa() {

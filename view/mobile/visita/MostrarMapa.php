@@ -29,7 +29,7 @@ $longlat = explode(',', $localization);
 
             function initialize() {
                 var mapOptions = {
-                    zoom: 13
+                    zoom: 15
                 };
 
                 map = new google.maps.Map(document.getElementById('map-canvas'),
