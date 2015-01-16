@@ -1,13 +1,16 @@
 <?php
 
+include 'dao/EmpresaDao.php';
 include_once 'dao/UsuarioDao.php';
 
 class UsuarioController {
 
     private $usuarioDao;
-
+    private $empresaDao;
+    
     function UsuarioController() {
         $this->usuarioDao = new UsuarioDao;
+        $this->empresaDao = new EmpresaDao;
     }
 
     function listar() {
@@ -16,6 +19,7 @@ class UsuarioController {
     }
 
     function formAdd() {
+        $_REQUEST['listaEmpresa'] = $this->empresaDao->listar();
         include_once 'view/web/usuario/CadastroUsuario.php';
     }
 

@@ -20,7 +20,7 @@
         </strong>
     </p>
     <table border=2>
-        <tr><td>id</td><td>Nome</td><td>Senha</td><td>CPF</td><td>E-mail</td><td>Função</td><td>Permição</td><td colspan="2">Ações</td></tr>
+        <tr><td>id</td><td>Nome</td><td>Senha</td><td>CPF</td><td>E-mail</td><td>Empresa</td><td>Permição</td><td colspan="2">Ações</td></tr>
         <?php
         $lista = $_REQUEST['listaFuncinario'];
 

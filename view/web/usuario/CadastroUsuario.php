@@ -1,3 +1,4 @@
+
 <div style="
      margin: 20px">
     <form method="POST" action="?controller=Usuario&acao=cadastrarUsuario">
@@ -39,10 +40,21 @@
 
             <tr>
                 <td>
-                    <label>Função:</label>
+                    <label>Empresa:</label>
                 </td>
                 <td>
-                    <input type="text" name="funcaoUsuario">
+                    <select  name="funcaoUsuario" required="">
+                        <option selected value="">Empresas</option>
+
+                        <?php
+                        $listaEmpresa = $_REQUEST['listaEmpresa'];
+                        foreach ($listaEmpresa as $empresa) {
+                            $razao = $empresa->getRazaoSocial();
+                            echo "<option value='$razao'>$razao</option>";
+                        }
+                        ?>
+                    </select>
+
                 </td>
             </tr>
 
@@ -54,6 +66,7 @@
                     <select name="permicaoUsuario">
                         <option value="admin">admin</option>
                         <option value="user">user</option>
+                        <option value="clientes">clientes</option>
                     </select>
                     <!--<input type="text" name="permicaoUsuario">-->
                 </td>

@@ -63,7 +63,8 @@ else if ($user != NULL) {
 
 
     $permicao = $user->getPermicao();
-
+    
+    //ADMINITRADOR
     if ($permicao == 'admin') {
         if ($browser == 'web') {
             include_once 'view/web/adm/menu.php';
@@ -82,6 +83,7 @@ else if ($user != NULL) {
         }
     }
 
+    //USUÁRIO
     if ($permicao == 'user') {
         if ($browser == 'web') {
             include_once 'view/web/user/menu.php';
@@ -99,6 +101,26 @@ else if ($user != NULL) {
             }
         }
     }
+    
+    //CLIENTES
+        if ($permicao == 'clientes') {
+        if ($browser == 'web') {
+            include_once 'view/web/clientes/menu.php';
+            if (empty($_GET['acao'])) {
+                $acao = "homeClientes";
+            } else {
+                $acao = $_GET['acao'];
+            }
+        } else if ($browser == 'mobile') {
+            include_once 'view/mobile/clientes/menu.php';
+            if (empty($_GET['acao'])) {
+                $acao = "homeClientesMobile";
+            } else {
+                $acao = $_GET['acao'];
+            }
+        }
+    }
+    
 }
 ?>
 

@@ -98,8 +98,6 @@ class VisitaController {
     }
 
     function cadastrarVisita() {
-
-
         $empresa = $_POST['empresaVisita'];
         $usuario = $_POST['usuarioVisita'];
         $descricao = $_POST['descricaoVisita'];
@@ -107,18 +105,14 @@ class VisitaController {
         $corretiva = $_POST['corretivaVisita'];
         $horaDeInicio = $_POST['horaDeInicioVisita'];
         $horaDeTermino = $_POST['horaDeTerminoVisita'];
-
         $horaDeInicioFormatada = $this->converterData($horaDeInicio);
         $horaDeTerminoForamatada = $this->converterData($horaDeTermino);
-
-
         if (empty($_POST['var_escondida'])) {
             $this->erro = "Impossivel cadastrar sem localização";
             echo $this->erro;
             die();
         } else
             $localization = $_POST['var_escondida'];
-
 
         date_default_timezone_set('America/Maceio');
         $horaLocal = date('d-m-Y H:i:s');

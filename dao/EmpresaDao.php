@@ -1,7 +1,7 @@
 <?php
 
 include_once 'model/BD.php';
-include 'model/Empresa.php';
+include_once 'model/Empresa.php';
 
 class EmpresaDao {
 
